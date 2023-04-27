@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %}
+registro | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+<body class="body">
+    <div class="container">
+        <h1>registro usuario</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="{{ form.username.auto_id }}">Username:</label>
+            {{ form.username }}
+            <label for="{{ form.name.auto_id }}">Name:</label>
+            {{ form.name }}
+            <label for="{{ form.email.auto_id }}">Email:</label>
+            {{ form.email }}
+            <label for="{{ form.password1.auto_id }}">Password:</label>
+            {{ form.password1 }}
+            <label for="{{ form.password2.auto_id }}">Confirm Password:</label>
+            {{ form.password2 }}
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+
+<style>
+    /* Agrega tus estilos CSS personalizados aquí */
+    .body {
+        /* Estilos para el cuerpo del formulario */
+    }
+
+    .container {
+        /* Estilos para el contenedor del formulario */
+    }
+
+    h1 {
+        /* Estilos para el título del formulario */
+    }
+
+    form {
+        /* Estilos para el formulario */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    label {
+        /* Estilos para las etiquetas de los campos de formulario */
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        /* Estilos para los campos de entrada de texto */
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+        /* Estilos para el botón de envío */
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        /* Estilos para el botón de envío al pasar el cursor sobre él */
+        background-color: #0056b3;
+    }
+</style>
+
+{% endblock %}

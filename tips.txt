@@ -1,0 +1,6 @@
+{
+    "username": "alonso",
+    "password": "alonso"
+}
+
+pip freeze > requirements.txt

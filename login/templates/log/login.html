@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+hola mundo | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+
+<body class="body-log">
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <br>
+            <br>
+            <div class="fadeIn first">
+                <h1>A R I Z O N A</h1>
+                <br>
+            </div>
+
+            <!-- Login Form -->
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+
+
+
+{% endblock %}
